@@ -1,0 +1,6 @@
+import System;
+
+class One 
+{
+	
+}
