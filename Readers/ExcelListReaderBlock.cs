@@ -46,16 +46,15 @@ namespace ReusableBlocks.Readers
         {
             ArrayList list = new ArrayList(columnCount);
 
-            for (int colIndex=0; colIndex < columnCount; colIndex++)
+            for (int colIndex=1; colIndex <= columnCount; colIndex++)
             {
-                String column = ((int)'A' + colIndex).ToString();
-                Microsoft.Office.Interop.Excel.Range r = workSheet.Range[column + rowIndex];
+                Microsoft.Office.Interop.Excel.Range r = workSheet.Cells[rowIndex, colIndex];
                 list.Add(r.Text);
             }
 
             return list;
         }
-
+        
         private Boolean disposedValue; 
 
         protected virtual void Dispose(Boolean disposing)
